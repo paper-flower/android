@@ -5,7 +5,10 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,9 +40,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
+        buildListView();
+    }
+
+    private void buildListView(){
+        ListView listView=(ListView)findViewById(R.id.listview);
+        ArrayList<Item> data=new ArrayList<>();
+        Item lion=new Item(R.drawable.lion,"Lion");
+        Item tiger=new Item(R.drawable.tiger,"Tiger");
+        Item dog=new Item(R.drawable.dog,"Dog");
+        Item cat=new Item(R.drawable.cat,"Cat");
+        data.add(lion);
+        data.add(tiger);
+        data.add(dog);
+        data.add(cat);
+        ListviewAdapter adapter=new ListviewAdapter(this,R.layout.item, data);
+        listView.setAdapter(adapter);
     }
 
 }
