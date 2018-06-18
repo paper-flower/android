@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         data.add(tiger);
         data.add(dog);
         data.add(cat);
-        ListviewAdapter adapter=new ListviewAdapter(this,R.layout.item, data);
+        ListviewAdapter adapter=new ListviewAdapter(this, R.layout.item, data);
         listView.setAdapter(adapter);
     }
 

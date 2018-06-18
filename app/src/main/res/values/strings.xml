@@ -4,5 +4,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="item_name">hello world</string>
+    <string name="item_text">(서울·도쿄=연합뉴스) 김귀근 기자 김병규 특파원 = 우리 군이 18일 정례적인 독도방어훈련에 돌입할 예정인 가운데 일본 정부는 외교 채널을 통해 강력히 항의하며 훈련 중단을 요구했다.\n \n 해군과 해병대는 이날 오후부터 독도와 인근 해역에서 정례적인 독도방어훈련에 돌입한다고 밝혔다.</string>
     <string name="item_create">2019-01-01 UTC 09:11:10</string>
 </resources>
