@@ -19,8 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:choiceMode="singleChoice"
-            android:divider="#ffcc22"
-            android:dividerHeight="1.5dp" />
+            android:divider="#dfdedc"
+            android:dividerHeight="0.5dp" />
 
     </FrameLayout>
 
