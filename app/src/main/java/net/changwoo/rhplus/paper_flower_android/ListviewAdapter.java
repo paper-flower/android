@@ -8,7 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import net.changwoo.rhplus.paper_flower_android.http.Article;
+
+import java.util.List;
 
 /**
  * Created by rhee on 18/06/2018.
@@ -16,23 +18,23 @@ import java.util.ArrayList;
 
 public class ListviewAdapter extends BaseAdapter {
     private LayoutInflater inflater;
-    private ArrayList<Item> data;
+    private List<Article> articles;
     private int layout;
 
-    public ListviewAdapter(Context context, int layout, ArrayList<Item> data) {
+    public ListviewAdapter(Context context, int layout, List<Article> articles) {
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.data = data;
+        this.articles = articles;
         this.layout = layout;
     }
 
     @Override
     public int getCount() {
-        return data.size();
+        return articles.size();
     }
 
     @Override
     public String getItem(int position) {
-        return data.get(position).getName();
+        return articles.get(position).getText();
     }
 
     @Override
@@ -45,11 +47,11 @@ public class ListviewAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = inflater.inflate(layout, parent, false);
         }
-        Item listviewitem = data.get(position);
+        Article article = articles.get(position);
         ImageView icon = (ImageView) convertView.findViewById(R.id.imageview);
-        icon.setImageResource(listviewitem.getIcon());
+        icon.setImageResource(R.drawable.dog);
         TextView name = (TextView) convertView.findViewById(R.id.textview);
-        name.setText(listviewitem.getName());
+        name.setText(article.getText());
         return convertView;
     }
 }
