@@ -16,7 +16,7 @@ import net.changwoo.rhplus.paper_flower_android.http.HttpCallback;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements HttpCallback<List<Article>> {
 
     private TextView mTextMessage;
 
@@ -51,23 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         ArticleClient articleClient = new ArticleClientImpl();
-        articleClient.getArticle(new HttpCallback<Article>(){
-
-            @Override
-            public void success(Article article) {
-
-            }
-
-            @Override
-            public void fail(Article article) {
-
-            }
-
-            @Override
-            public void complete(Article article) {
-
-            }
-        });
+        articleClient.getArticle(this);
         buildListView();
     }
 
@@ -86,4 +70,18 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
 
+    @Override
+    public void success(List<Article> articles) {
+
+    }
+
+    @Override
+    public void fail(List<Article> articles) {
+
+    }
+
+    @Override
+    public void complete(List<Article> articles) {
+
+    }
 }
