@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements HttpCallback<List
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-
         ArticleClient articleClient = new ArticleClientImpl();
         articleClient.index(this);
     }

@@ -24,7 +24,7 @@ public interface ArticleService {
 
     @Multipart
     @PUT("/api/v1/articles/{id}")
-    Call<Article> update(@Path("id") @Body Article article);
+    Call<Article> update(@Path("id") Integer id, @Body Article article);
 
     @DELETE("/api/v1/articles/{id}")
     Call<Article> destroy(@Path("id") Integer id);

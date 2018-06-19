@@ -1,7 +1,6 @@
 package net.changwoo.rhplus.paper_flower_android.http;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -11,10 +10,12 @@ import retrofit2.Response;
 
 public class ArticleClientImpl extends RestApiClient implements ArticleClient {
 
-    ArticleService service;
+    private ArticleService service;
+    private String token;
 
     public ArticleClientImpl(){
         this.service = retrofit.create(ArticleService.class);
+        this.token = "sample_usertoken";
     }
 
     @Override
@@ -42,12 +43,22 @@ public class ArticleClientImpl extends RestApiClient implements ArticleClient {
     }
 
     @Override
-    public void create() {
+    public void show(HttpCallback httpCallback, Integer id) {
 
     }
 
     @Override
-    public void update() {
+    public void create(HttpCallback httpCallback, Article article) {
+
+    }
+
+    @Override
+    public void update(HttpCallback httpCallback, Article article) {
+
+    }
+
+    @Override
+    public void detsroy(HttpCallback httpCallback, Integer id) {
 
     }
 }
