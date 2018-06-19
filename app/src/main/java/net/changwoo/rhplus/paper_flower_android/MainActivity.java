@@ -8,11 +8,13 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import net.changwoo.rhplus.paper_flower_android.http.Article;
 import net.changwoo.rhplus.paper_flower_android.http.ArticleClient;
 import net.changwoo.rhplus.paper_flower_android.http.ArticleClientImpl;
 import net.changwoo.rhplus.paper_flower_android.http.HttpCallback;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,19 +51,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         ArticleClient articleClient = new ArticleClientImpl();
-        articleClient.getArticle(new HttpCallback(){
+        articleClient.getArticle(new HttpCallback<Article>(){
+
             @Override
-            public <List> void success(List articles) {
+            public void success(Article article) {
 
             }
 
             @Override
-            public <List> void fail(List articles) {
+            public void fail(Article article) {
 
             }
 
             @Override
-            public <List> void complete(List articles) {
+            public void complete(Article article) {
 
             }
         });

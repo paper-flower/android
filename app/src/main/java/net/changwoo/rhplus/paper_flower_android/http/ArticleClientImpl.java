@@ -29,8 +29,8 @@ public class ArticleClientImpl extends RestApiClient implements ArticleClient {
             @Override
             public void onResponse(Call<List<Article>> call, Response<List<Article>> response) {
                 List<Article> articles = response.body();
-                httpCallback.success(articles);
-                httpCallback.complete(articles);
+                httpCallback.success(null);
+                httpCallback.complete(null);
             }
 
             @Override
