@@ -18,9 +18,9 @@ public class ArticleClientImpl extends RestApiClient implements ArticleClient {
     }
 
     @Override
-    public void getArticle(final HttpCallback httpCallback) {
+    public void index(final HttpCallback httpCallback) {
         /** Call the method with parameter in the interface to get the notice data*/
-        Call<List<Article>> call = service.listPosts();
+        Call<List<Article>> call = service.index();
 
         /**Log the URL called*/
         Log.wtf("URL Called", call.request().url() + "");
@@ -42,12 +42,12 @@ public class ArticleClientImpl extends RestApiClient implements ArticleClient {
     }
 
     @Override
-    public void postArticle() {
+    public void create() {
 
     }
 
     @Override
-    public void updateArticle() {
+    public void update() {
 
     }
 }

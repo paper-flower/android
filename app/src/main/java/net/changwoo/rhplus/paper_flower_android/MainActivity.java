@@ -51,28 +51,18 @@ public class MainActivity extends AppCompatActivity implements HttpCallback<List
 
 
         ArticleClient articleClient = new ArticleClientImpl();
-        articleClient.getArticle(this);
-        buildListView();
+        articleClient.index(this);
     }
 
-    private void buildListView(){
+    private void buildListView(List<Article> articles){
         ListView listView=(ListView)findViewById(R.id.listview);
-        ArrayList<Item> data=new ArrayList<>();
-        Item lion=new Item(R.drawable.lion,"Lion");
-        Item tiger=new Item(R.drawable.tiger,"Tiger");
-        Item dog=new Item(R.drawable.dog,"Dog");
-        Item cat=new Item(R.drawable.cat,"Cat");
-        data.add(lion);
-        data.add(tiger);
-        data.add(dog);
-        data.add(cat);
-        ListviewAdapter adapter=new ListviewAdapter(this, R.layout.item, data);
+        ListviewAdapter adapter=new ListviewAdapter(this, R.layout.item, articles);
         listView.setAdapter(adapter);
     }
 
     @Override
     public void success(List<Article> articles) {
-
+        buildListView(articles);
     }
 
     @Override
