@@ -7,13 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import net.changwoo.rhplus.paper_flower_android.http.Article;
 import net.changwoo.rhplus.paper_flower_android.http.ArticleClient;
 import net.changwoo.rhplus.paper_flower_android.http.ArticleClientImpl;
 import net.changwoo.rhplus.paper_flower_android.http.HttpCallback;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements HttpCallback<List<Article>> {

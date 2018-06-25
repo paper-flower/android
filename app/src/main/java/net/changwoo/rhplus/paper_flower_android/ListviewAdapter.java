@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import net.changwoo.rhplus.paper_flower_android.http.Article;
 
 import java.util.List;
