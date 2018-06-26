@@ -12,6 +12,7 @@ import net.changwoo.rhplus.paper_flower_android.http.ArticleClient;
 import net.changwoo.rhplus.paper_flower_android.http.ArticleClientImpl;
 import net.changwoo.rhplus.paper_flower_android.http.HttpCallback;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements HttpCallback<List<Article>> {
@@ -47,8 +48,14 @@ public class MainActivity extends AppCompatActivity implements HttpCallback<List
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        ArticleClient articleClient = new ArticleClientImpl();
-        articleClient.index(this);
+//        ArticleClient articleClient = new ArticleClientImpl();
+//        articleClient.index(this);
+        List<Article> articles = new ArrayList<Article>();
+        articles.add(new Article("hello", "conetent", 1));
+        articles.add(new Article("hello2", "conetent2", 1));
+        articles.add(new Article("hello3", "conetent3", 1));
+        articles.add(new Article("hello4", "conetent4", 1));
+        buildListView(articles);
     }
 
     private void buildListView(List<Article> articles){

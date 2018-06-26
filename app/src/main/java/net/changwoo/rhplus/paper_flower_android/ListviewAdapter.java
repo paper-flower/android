@@ -50,7 +50,9 @@ public class ListviewAdapter extends BaseAdapter {
         ImageView icon = (ImageView) convertView.findViewById(R.id.imageview);
         icon.setImageResource(R.drawable.dog);
         TextView name = (TextView) convertView.findViewById(R.id.textview);
-        name.setText(article.getText());
+        name.setText(article.getTitle());
+        TextView text = (TextView) convertView.findViewById(R.id.post_text);
+        text.setText(article.getText());
         return convertView;
     }
 }

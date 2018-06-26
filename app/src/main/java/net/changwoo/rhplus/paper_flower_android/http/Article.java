@@ -5,6 +5,12 @@ public class Article {
     private String text;
     private Integer userid;
 
+    public Article(String title, String text, Integer userid) {
+        this.title = title;
+        this.text = text;
+        this.userid = userid;
+    }
+
     public String getTitle() {
         return title;
     }
